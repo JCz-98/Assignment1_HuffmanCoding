@@ -30,6 +30,7 @@ public class HFEncoder
 			//find total number of symbols in file
 			numsym+=symbol_counts[i];
 		}
+		//Total symbols read in file = 574981
 
 		fr.close();
 		
