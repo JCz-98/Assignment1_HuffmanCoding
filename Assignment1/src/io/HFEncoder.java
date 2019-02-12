@@ -33,6 +33,14 @@ public class HFEncoder
 
 		fr.close();
 		
+		//calculate probabilities
+		double[] prob = new double[256];
+		  
+		 for(int i=0; i<freq.length; i++)
+		 {
+			 prob[i] = (double)freq[i]/ (double) numsym;
+		 }
+		
 		// Construct the optimal, minimum variance Huffman tree
 		CNode head = buildTree(symbol_counts);
 		
