@@ -236,6 +236,25 @@ public class HFEncoder
 			
 			return L1;
 	  }
+	
+	public static double sourceEntropy(int[] freq, int numsym)
+	  {
+		  double entropy = 0.0;
+		  double[] prob = new double[256];
+		  
+		  for(int i=0; i<freq.length; i++)
+		  {
+			  prob[i] = (double)freq[i]/ (double) numsym;
+			  if(prob[i] != 0.0)
+			  {
+				  entropy += (prob[i] * (Math.log(prob[i])/Math.log(2)));				  
+			  }
+			  
+		  }
+		  entropy = entropy * -1;
+		  
+		  return entropy;
+	  }
 
 }
 
